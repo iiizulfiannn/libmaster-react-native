@@ -195,6 +195,7 @@ const books = (prevState = initialValue, action) => {
       };
     case deleteBookAction + fulfilled:
       const dataAfterDelete = prevState.books.filter(
+        // eslint-disable-next-line radix
         book => book.id !== parseInt(action.payload.data.data.id),
       );
       return {
