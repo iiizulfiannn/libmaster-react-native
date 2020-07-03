@@ -45,12 +45,14 @@
 
 ## Screenshot App
 
-<img src="screenshoots/Swiper.png" width="200" alt="...">
-<img src="screenshoots/Login.png" width="200" alt="...">
-<img src="screenshoots/Account.png" width="200" alt="...">
-<img src="screenshoots/Home.png" width="200" alt="...">
-<img src="screenshoots/List Borrow.png" width="200" alt="...">
-<img src="screenshoots/Detail Book.png" width="200" alt="...">
+<div align="center">
+    <img src="./screenshoots/Swiper.png" width="250" alt="...">
+    <img src="./screenshoots/Login.png" width="250" alt="...">
+    <img src="./screenshoots/Account.png" width="250" alt="...">
+    <img src="./screenshoots/Home.png" width="250" alt="...">
+    <img src="./screenshoots/List Borrow.png" width="250" alt="...">
+    <img src="./screenshoots/Detail Book.png" width="250" alt="...">
+</div>
 
 ## Related Project (Backend)
 
