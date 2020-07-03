@@ -122,5 +122,7 @@ export default connect(
 const styles = StyleSheet.create({
   barBackground: {
     backgroundColor: '#fff',
+    borderTopColor: '#aaa',
+    borderTopWidth: 1,
   },
 });

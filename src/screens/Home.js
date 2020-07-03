@@ -336,9 +336,7 @@ class Home extends Component {
             <Loading />
           ) : books.isRejected ? (
             <View styles={styles.notFound}>
-              <Text styles={styles.notFoundText}>
-                Not Found, kuy try again ;)
-              </Text>
+              <Text styles={styles.notFoundText}>Not Found, try again ;)</Text>
             </View>
           ) : (
             <FlatList

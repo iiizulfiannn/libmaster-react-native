@@ -9,6 +9,7 @@ export const getBookAction = 'GET_BOOK';
 export const addBookAction = 'ADD_BOOK';
 export const updateBookAction = 'UPDATE_BOOK';
 export const deleteBookAction = 'DELETE_BOOK';
+// export const updateStatusAction = 'UPDATE_STATUS_BOOK';
 
 export const getAllBorrowAction = 'GET_ALL_BORROW';
 export const getBorrowByUserAction = 'GET_BORROW_BY_USER';

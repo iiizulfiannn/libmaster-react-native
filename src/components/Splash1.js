@@ -16,7 +16,7 @@ export default class Splash1 extends Component {
       if (this.state.user !== null) {
         this.props.navigation.navigate('TabsStack');
       } else {
-        this.props.navigation.navigate('SignIn');
+        this.props.navigation.navigate('Swiper');
       }
     }, 6000);
   };

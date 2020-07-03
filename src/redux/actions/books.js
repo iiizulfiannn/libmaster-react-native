@@ -7,6 +7,7 @@ import {
   updateBookAction,
   deleteBookAction,
   resetStateAction,
+  // updateStatusAction,
 } from './actionTypes';
 import {
   getAllBooksAdmin,
@@ -16,6 +17,13 @@ import {
   updateBook,
   deleteBook,
 } from '../../utils/http';
+
+// export const updateStatusActionCreator = data => {
+//   return {
+//     type: updateStatusAction,
+//     payload: data,
+//   };
+// };
 
 export const getAllBooksActionAdmin = () => {
   return {

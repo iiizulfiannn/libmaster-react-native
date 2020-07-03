@@ -20,6 +20,7 @@ import {
 } from '../redux/actions/borrow';
 import qs from 'querystring';
 import {URL_API} from '../utils/http';
+import Loading from '../components/Loading';
 
 export class HistoryBorrow extends Component {
   constructor(props) {
@@ -44,15 +45,15 @@ export class HistoryBorrow extends Component {
     return <View style={styles.itemSeparate} />;
   };
 
-  handleReturn = async (borrowId, bookId) => {
-    console.log(borrowId, bookId);
+  handleReturn = async (borrowId, book_id) => {
+    // console.log(borrowId, book_id);
     const data = {
       borrowId,
-      book_id: bookId,
+      book_id,
     };
 
     await this.props.returnBookAction(qs.stringify(data));
-    await this.getAllBorrows();
+    // await this.getAllBorrows();
   };
 
   renderItem = ({item}) => {
@@ -119,17 +120,26 @@ export class HistoryBorrow extends Component {
 
   render() {
     const {borrow} = this.props;
-    console.log(borrow.borrow);
+    // console.log(borrow.borrow);
     return (
       <View style={styles.container}>
+        <View style={styles.header}>
+          <Text style={styles.text}>List Borrow</Text>
+        </View>
         <View style={styles.flatList}>
-          <FlatList
-            data={borrow.borrow}
-            renderItem={this.renderItem}
-            keyExtractor={(item, index) => index.toString()}
-            ItemSeparatorComponent={this.ItemSeparatorComponent}
-            showsVerticalScrollIndicator={false}
-          />
+          {!borrow.borrow && (
+            <Text style={styles.textno}>No list, let's borrow a book</Text>
+          )}
+          {borrow.isLoading && <Loading />}
+          {borrow.isFulfilled && (
+            <FlatList
+              data={borrow.borrow}
+              renderItem={this.renderItem}
+              keyExtractor={(item, index) => index.toString()}
+              ItemSeparatorComponent={this.ItemSeparatorComponent}
+              showsVerticalScrollIndicator={false}
+            />
+          )}
         </View>
       </View>
     );
@@ -160,6 +170,20 @@ export default connect(
 )(HistoryBorrow);
 
 const styles = StyleSheet.create({
+  header: {
+    height: 50,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderBottomWidth: 1,
+    borderBottomColor: '#aaa',
+  },
+  text: {
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+  textno: {
+    alignItems: 'center',
+  },
   container: {
     flex: 1,
     backgroundColor: 'white',
@@ -167,7 +191,7 @@ const styles = StyleSheet.create({
   },
   flatList: {
     flex: 1,
-    marginTop: 10,
+    marginVertical: 10,
     paddingHorizontal: 10,
   },
   item: {
@@ -192,6 +216,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     paddingHorizontal: 10,
+    marginLeft: 5,
   },
   contentAtas: {
     flex: 3,

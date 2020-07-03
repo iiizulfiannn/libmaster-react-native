@@ -10,7 +10,10 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {URL_API} from '../utils/http';
-import {getBookActionAdmin} from '../redux/actions/books';
+import {
+  getBookActionAdmin,
+  // updateStatusActionCreator,
+} from '../redux/actions/books';
 import {connect} from 'react-redux';
 import qs from 'querystring';
 
@@ -45,6 +48,11 @@ class Details extends Component {
       book_id: books.book.id,
     };
     await this.props.addBorrowAction(qs.stringify(data));
+    await this.props.getBookAction(this.props.route.params.id);
+  };
+
+  componentDidUpdate = prevProps => {
+    console.log(prevProps);
   };
 
   render() {
@@ -82,7 +90,7 @@ class Details extends Component {
           </Text>
           <Text style={styles.textGenre}>{books.book.genre_name}</Text>
           <Text style={styles.textAuthor}>{books.book.author_name}</Text>
-          <Text style={styles.textDetail}>{books.book.descriptidon}</Text>
+          <Text style={styles.textDetail}>{books.book.description}</Text>
           {books.book.status_name === 'Available' ? (
             <TouchableOpacity
               style={styles.containerDescription}
@@ -121,17 +129,9 @@ const mapDispatchToProps = dispatch => {
       dispatch(addBorrowActionCreator(data));
     },
 
-    // addBorrowAction: (data) => {
-    //   dispatch(addBorrowActionCreator(data))
+    // updateStatusAction: data => {
+    //   dispatch(updateStatusActionCreator(data));
     // },
-
-    // currentUserAction: () => {
-    //   dispatch(currentUserActionCreator())
-    // },
-
-    // resetStateAction: () => {
-    //   dispatch(resetStateActionCreator())
-    // }
   };
 };
 
@@ -206,7 +206,7 @@ var styles = StyleSheet.create({
   },
   textDetail: {
     color: 'gray',
-    marginTop: 10,
+    marginVertical: 20,
   },
   button: {
     justifyContent: 'center',

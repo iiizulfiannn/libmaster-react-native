@@ -383,4 +383,7 @@ const styles = StyleSheet.create({
   textWrong: {
     color: 'red',
   },
+  action: {
+    marginTop: 30,
+  },
 });

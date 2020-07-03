@@ -10,6 +10,7 @@ import {
   getAllBooksActionHome,
   getAllBooksLoadMoreActionHome,
   resetStateAction,
+  // updateStatusAction,
 } from '../actions/actionTypes';
 
 const initialValue = {
@@ -24,6 +25,17 @@ const initialValue = {
 
 const books = (prevState = initialValue, action) => {
   switch (action.type) {
+    // case updateStatusAction + fulfilled:
+    //   const dataAfterUpdateStatus = prevState.books.map(book => {
+    //     if (book.id === action.payload.data.data.id) {
+    //       return action.payload.data.data;
+    //     }
+    //     return book;
+    //   });
+    //   return {
+    //     ...prevState,
+    //     book:
+    //   };
     case getAllBooksAction + pending:
       return {
         ...prevState,
@@ -103,6 +115,7 @@ const books = (prevState = initialValue, action) => {
         isLoading: false,
       };
     case getBookAction + fulfilled:
+      // console.log(action.payload.data.data);
       return {
         ...prevState,
         isRejected: false,

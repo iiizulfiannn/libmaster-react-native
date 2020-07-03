@@ -25,7 +25,7 @@ export default class Profile extends Component {
   };
   handleLogout = () => {
     logOut();
-    this.props.navigation.navigate('SignIn');
+    this.props.navigation.navigate('Swiper');
   };
 
   render() {
@@ -44,7 +44,7 @@ export default class Profile extends Component {
         </View>
         <View style={styles.wrapperButton}>
           <TouchableOpacity
-            onPress={this.props.navigation.navigate('HistoryBorrow')}>
+            onPress={() => this.props.navigation.navigate('HistoryBorrow')}>
             <LinearGradient
               start={{x: 0, y: 0}}
               end={{x: 1, y: 0}}

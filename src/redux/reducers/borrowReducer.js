@@ -14,6 +14,7 @@ const initialValue = {
   isLoading: false,
   isRejected: false,
   isFulfilled: false,
+  isSuccessAdd: false,
   message: '',
 };
 
@@ -76,13 +77,12 @@ const borrow = (prevState = initialValue, action) => {
         message: 'Add Borrow Failed',
       };
     case addBorrowAction + fulfilled:
-      prevState.borrow.push(action.payload.data.data);
+      prevState.borrow.unshift(action.payload.data.data[0]);
       return {
         ...prevState,
         isRejected: false,
         isFulfilled: true,
         isLoading: false,
-        borrow: prevState.borrow,
         message: 'Success borrow',
       };
 
@@ -101,12 +101,18 @@ const borrow = (prevState = initialValue, action) => {
         message: 'Return Book Failed',
       };
     case returnBookAction + fulfilled:
+      const dataAfterUpdateBorrow = prevState.borrow.map(br => {
+        if (br.id === action.payload.data.data[0].id) {
+          return action.payload.data.data[0];
+        }
+        return br;
+      });
       return {
         ...prevState,
         isRejected: false,
         isFulfilled: true,
         isLoading: false,
-        returnBook: action.payload.data.data,
+        borrow: dataAfterUpdateBorrow,
         message: 'Return Book Success',
       };
 

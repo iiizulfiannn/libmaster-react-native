@@ -299,5 +299,6 @@ const styles = StyleSheet.create({
   },
   action: {
     marginVertical: 10,
+    marginTop: 20,
   },
 });

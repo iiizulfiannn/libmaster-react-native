@@ -2,7 +2,7 @@ import Axios from 'axios';
 import AsyncStorage from '@react-native-community/async-storage';
 
 // export const URL_API = process.env.REACT_APP_URL_API
-export const URL_API = 'http://192.168.1.4:8080';
+export const URL_API = 'http://192.168.1.3:8080';
 
 // const authHeader = () => {
 //     const user = JSON.parse(localStorage.getItem('user'));
