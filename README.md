@@ -59,10 +59,14 @@
 
 ## Related Project (Backend)
 
-- [`Libmaster-API`](https://github.com/iiizulfiannn/libmaster-api)
+- [`Libmaster API`](https://github.com/iiizulfiannn/libmaster-api)
 
 ## Release APK
 
-<a href="">
-  <img src=""/>
+<a href="https://drive.google.com/file/d/13PWYzxBrWxlf_CidJgBWuUyNuPVA5ZiZ/view?usp=sharing">
+  <img src="https://img.shields.io/badge/Download%20on%20the-Google%20Drive-blue.svg?style=popout&logo=google-drive"/>
 </a>
+
+## Contributor
+
+- [Zulfian](https://github.com/iiizulfiannn 'Zulfian')
