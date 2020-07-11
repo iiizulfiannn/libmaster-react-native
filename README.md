@@ -33,7 +33,7 @@
 - [`npm`](https://www.npmjs.com/get-npm) or [`yarn`](https://yarnpkg.com/getting-started/install)
 - [`react-native`](https://facebook.github.io/react-native/docs/getting-started)
 - [`react-native-cli`](https://facebook.github.io/react-native/docs/getting-started)
-- [`Backend-Ninja-Api`](https://github.com/iiizulfiannn/libmaster-api)
+- [`Backend-Libmaster-Api`](https://github.com/iiizulfiannn/libmaster-api)
 
 ## Usage for development
 
@@ -50,7 +50,8 @@
     <img src="./screenshoots/Login.png" width="250" alt="...">
     <img src="./screenshoots/Account.png" width="250" alt="...">
 </div>
-    <div align="center">
+
+<div align="center">
     <img src="./screenshoots/Home.png" width="250" alt="...">
     <img src="./screenshoots/List Borrow.png" width="250" alt="...">
     <img src="./screenshoots/Detail Book.png" width="250" alt="...">
